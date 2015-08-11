@@ -1,6 +1,6 @@
 {
   "name": "mysqlspec",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Generate JSON schema from mysql tables.",
   "main": "lib",
   "scripts": {

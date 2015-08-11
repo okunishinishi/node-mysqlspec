@@ -59,23 +59,24 @@ var config = {
     database: 'my_db'
 };
 // Get spec for connected database
-mysqlspec(config, function (err, data) {
-    console.log("structure=" + JSON.stringify(data, null, 4));
+mysqlspec(config, function (err, schema) {
+    console.log("schema=" + JSON.stringify(schema, null, 4));
 });
 ```
 
 This will result like:
 
 ```Javascript
-data = { // Schema for in "my_db.TEST_SHOP" database.
+schema = { // Schema for in "my_db.TEST_SHOP" database.
     name: 'my_db.TEST_SHOP',
     properties: {
         id: {type: 'integer', maxLength: 5},
         article: {type: 'integer', maxLength: 4},
         dealer: {type: 'string', maxLength: 20},
-        price: {type: 'number', maxLength: undefined}
+        price: {type: 'number'}
     },
-    required: ['id', 'article', 'dealer', 'price']
+    required: ['id', 'article', 'dealer', 'price'],
+    additionalProperties: false
 };
 ```
 API
