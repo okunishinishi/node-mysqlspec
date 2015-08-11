@@ -19,16 +19,15 @@ exports['specify a table.'] = function (test) {
     var specifier = new MysqlSpecifier(testDbConfig);
     specifier.specifyTable('my_test_database', 'TEST_SHOP', function (err, spec) {
         test.ifError(err);
-        test.deepEqual(spec, {
-            name: 'TEST_SHOP',
-            properties: {
-                id: {type: 'integer', maxLength: 5},
-                article: {type: 'integer', maxLength: 4},
-                dealer: {type: 'string', maxLength: 20},
-                price: {type: 'number', maxLength: undefined}
-            },
-            required: ['id', 'article', 'dealer', 'price']
+        test.deepEqual(spec.properties, {
+            id: {type: 'integer', maxLength: 5},
+            article: {type: 'integer', maxLength: 4},
+            dealer: {type: 'string', maxLength: 20},
+            price: {type: 'number', maxLength: undefined}
         });
+        test.deepEqual(spec.required, [
+            'id', 'article', 'dealer', 'price'
+        ]);
         test.done();
     });
 };

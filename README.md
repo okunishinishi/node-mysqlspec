@@ -67,26 +67,15 @@ mysqlspec(config, function (err, data) {
 This will result like:
 
 ```Javascript
-data = { // Tables in "my_db" database.
-    "TEST_PERSON": { // Columns in "TEST_PERSON" table.
-        "PersonID": { // Spec of "TEST_PERSON.PersonID" column.
-            "Type": "int(11)",
-            "Null": "YES",
-            "Key": "",
-            "Default": null,
-            "Extra": ""
-        },
-        "LastName": {
-            "Type": "varchar(255)",
-            "Null": "YES",
-            "Key": "",
-            "Default": null,
-            "Extra": ""
-        }
+data = { // Schema for in "my_db.TEST_SHOP" database.
+    name: 'my_db.TEST_SHOP',
+    properties: {
+        id: {type: 'integer', maxLength: 5},
+        article: {type: 'integer', maxLength: 4},
+        dealer: {type: 'string', maxLength: 20},
+        price: {type: 'number', maxLength: undefined}
     },
-    "TEST_SHOP": {
-        /*...*/
-    }
+    required: ['id', 'article', 'dealer', 'price']
 };
 ```
 API
@@ -128,5 +117,6 @@ Links
 
 + [node-mysql](https://github.com/felixge/node-mysql/)
 + [node-mysqldesc](https://github.com/okunishinishi/node-mysqldesc)
++ [json-schema](http://json-schema.org/)
 
 <!-- Links End -->

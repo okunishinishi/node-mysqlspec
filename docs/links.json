@@ -1,4 +1,5 @@
 {
   "node-mysql": "https://github.com/felixge/node-mysql/",
-  "node-mysqldesc": "https://github.com/okunishinishi/node-mysqldesc"
+  "node-mysqldesc": "https://github.com/okunishinishi/node-mysqldesc",
+  "json-schema": "http://json-schema.org/"
 }
