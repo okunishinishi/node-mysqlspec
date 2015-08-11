@@ -38,6 +38,13 @@ exports['specify a database.'] = function (test) {
         test.ifError(err);
         var names = Object.keys(spec);
         test.deepEqual(names, ['TEST_PERSON', 'TEST_PRODUCT', 'TEST_SHOP']);
+        test.deepEqual(spec['TEST_PERSON']['properties'], {
+            id: {type: 'integer', maxLength: 11},
+            last_name: {type: 'string', maxLength: 255},
+            first_name: {type: 'string', maxLength: 255},
+            address: {type: 'string', maxLength: 255},
+            city: {type: 'string', maxLength: 255}
+        });
         test.done();
     });
 };
