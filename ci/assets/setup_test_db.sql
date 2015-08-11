@@ -1,0 +1,32 @@
+CREATE DATABASE IF NOT EXISTS my_test_database;
+
+USE my_test_database;
+
+
+DROP TABLE IF EXISTS TEST_PERSON;
+DROP TABLE IF EXISTS TEST_PRODUCT;
+DROP TABLE IF EXISTS TEST_SHOP;
+
+CREATE TABLE IF NOT EXISTS TEST_SHOP (
+    id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
+    article INT(4) UNSIGNED ZEROFILL DEFAULT '0000' NOT NULL,
+    dealer  CHAR(20)                 DEFAULT ''     NOT NULL,
+    price   DOUBLE(16,2)             DEFAULT '0.00' NOT NULL,
+    PRIMARY KEY(id)
+);
+
+CREATE TABLE IF NOT EXISTS TEST_PRODUCT (
+     id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
+     shop_id SMALLINT UNSIGNED NOT NULL,
+     PRIMARY KEY (id),
+     FOREIGN KEY(shop_id) REFERENCES TEST_SHOP(id)
+);
+
+CREATE TABLE IF NOT EXISTS TEST_PERSON
+(
+    id int,
+    last_name varchar(255),
+    first_name varchar(255),
+    address varchar(255),
+    city varchar(255)
+);

@@ -1,0 +1,4 @@
+{
+  "node-mysql": "https://github.com/felixge/node-mysql/",
+  "node-mysqldesc": "https://github.com/okunishinishi/node-mysqldesc"
+}

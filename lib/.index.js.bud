@@ -1,0 +1,20 @@
+/**
+ * Bud file for index.js
+ */
+
+"use strict";
+
+var coz = require('coz'),
+    pkg = require('../package.json');
+
+module.exports = {
+    force: true,
+    mode: '444',
+    data: {
+        pkg: pkg
+    }
+};
+
+if (!module.parent) {
+    coz.render(__filename);
+}

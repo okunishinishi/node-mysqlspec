@@ -1,0 +1,46 @@
+{
+  "name": "mysqlspec",
+  "version": "1.0.0",
+  "description": "Generate JSON schema from mysql tables.",
+  "main": "lib",
+  "scripts": {
+    "build": "./ci/build.js",
+    "test": "./ci/test.js",
+    "cover": "./ci/cover.js",
+    "report": "./ci/report.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/okunishinishi/node-mysqlspec.git"
+  },
+  "keywords": [
+    "mysql",
+    "json-schema"
+  ],
+  "author": {
+    "name": "Taka Okunishi",
+    "url": "http://okunishitaka.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/okunishinishi/node-mysqlspec/issues"
+  },
+  "homepage": "https://github.com/okunishinishi/node-mysqlspec#readme",
+  "devDependencies": {
+    "ape-covering": "^1.0.8",
+    "ape-releasing": "^1.0.14",
+    "ape-reporting": "^1.0.8",
+    "ape-tasking": "^1.0.6",
+    "ape-testing": "^1.1.6",
+    "ape-tmpl": "^1.0.3",
+    "ape-updating": "^1.0.1",
+    "coz": "^1.5.0"
+  },
+  "dependencies": {
+    "argx": "^1.1.4",
+    "async": "^1.4.0",
+    "extend": "^3.0.0",
+    "mysql": "^2.8.0",
+    "mysqldesc": "^1.1.2"
+  }
+}
